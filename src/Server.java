@@ -4,6 +4,10 @@ import java.awt.event.*;
 
 public class Server extends JFrame implements ActionListener {
 
+    JTextField text;
+    JPanel a1;
+    Box vertical = Box.createVerticalBox();
+
     Server(){
         setLayout(null);
 
@@ -67,11 +71,11 @@ public class Server extends JFrame implements ActionListener {
         p1.add(status);
 
 
-        JPanel a1 = new JPanel();
+        a1 = new JPanel();
         a1.setBounds(5, 75, 440, 570);
         add(a1);
 
-        JTextField text = new JTextField();
+        text = new JTextField();
         text.setBounds(5, 655, 310, 40);
         text.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
         add(text);
@@ -80,6 +84,7 @@ public class Server extends JFrame implements ActionListener {
         send.setBounds(320, 655, 123, 40);
         send.setBackground(new Color(7, 94, 84));
         send.setForeground(Color.WHITE);
+        send.addActionListener(this);
         send.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
         add(send);
 
@@ -95,7 +100,11 @@ public class Server extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae){
+        String out = text.getText();
+        
+        a1.setLayout(new BorderLayout());
 
+        JPanel right = new JPanel(new BorderLayout());
     }; 
 
     public static void main(String[] args){
